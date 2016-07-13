@@ -43,7 +43,8 @@ carouselSwipe.prototype={
            }
            outercon.appendChild(innercon);
            outercon.appendChild(hintcon);
-           document.body.appendChild(outercon);
+           $(outercon).insertAfter(obj.prevele);
+
             var container=document.querySelector(".carouselSwipe");
             var imgnum=ul.children.length;
     		var imgwidth=parseInt($(container).css("width"))/37.5;
@@ -54,7 +55,7 @@ carouselSwipe.prototype={
     		var span=outercon.querySelectorAll("span");          
     		$(ul).append(cloneli);
             $(cloneli1).insertBefore(ul.children[0]);
-            var img=ul.querySelectorAll("li img");
+            var li=ul.querySelectorAll("li");
 
     		var timer;
             var autoplay=function(){
@@ -95,16 +96,16 @@ carouselSwipe.prototype={
                 span[count-1].className="carouselSwipe-hinton";}
             }
 
-            for(var i=0;i<img.length;i++){
-                 img[i].index=i;
+            for(var i=0;i<li.length;i++){
+                 li[i].index=i;
                  var pagex,pagex1,x,y;          
-                 img[i].ontouchstart=function(e){
+                 li[i].ontouchstart=function(e){
                  	clearInterval(timer);
                  	var touch=e.touches[0];
                  	 pagex=touch.pageX;                 	
             	  }
             	  var ulleft;                  
-                 img[i].ontouchmove=function(e){
+                 li[i].ontouchmove=function(e){
                  	var touch=e.touches[0];
                  	 pagex1=touch.pageX;
                      y=pagex1-pagex;
@@ -124,7 +125,7 @@ carouselSwipe.prototype={
                      }                 	 
                  	 $(".carouselSwipe ul").css("transform","translateX("+x+"rem"+")");
                  }
-                 img[i].ontouchend=function(e){
+                 li[i].ontouchend=function(e){
                  	count=this.index;
                  	if(y<0){
                  	if(ulleft==0){
