@@ -1,0 +1,59 @@
+@charset 'UTF-8';
+/* carouselSwipe outer container:you can set the width and height by "rem"; */
+ *{margin:0;padding: 0;border:0;list-style:none}
+	.carouselSwipe
+	{
+	    position: relative;
+	    width: 10rem;
+	    height: 2rem;
+	}
+/* carouselSwipe inner container:we set the width and height similar with the outer container */
+	.carouselSwipe .cs-innercon
+	{
+	    position: relative;
+	    overflow: hidden;
+	    width: 10rem;
+	    height: 2rem;
+	}
+/* there is your images's container list:according the outer container, */
+	.carouselSwipe .cs-innercon ul
+	{
+	    position: absolute;
+	    overflow: hidden;
+	    width: 70rem;
+	    height: 2rem;
+	    transform: translateX(-10rem);
+	}
+	.carouselSwipe .cs-innercon ul li
+	{
+	    float: left;
+	    width: 10rem;
+	    height: 2rem;
+	}
+	.carouselSwipe .cs-innercon ul li a img
+	{
+	    width: 10rem;
+	    height: 2rem;
+	}
+	.carouselSwipe .carouselSwipe-hintcon
+	{
+	    position: absolute;
+	    z-index: 10;
+	    bottom: .266rem;
+	    left: 3.653rem;
+	    overflow: hidden;
+	}
+	.carouselSwipe .carouselSwipe-hintcon span
+	{
+	    float: left;
+	    overflow: hidden;
+	    width: .213rem;
+	    height: .213rem;
+	    margin: 0 .133rem;
+	    border-radius: 50%;
+	    background-color: rgba(255,255,255,.6);
+	}
+	.carouselSwipe .carouselSwipe-hintcon span.carouselSwipe-hinton
+	{
+	    background-color: #099fde;
+	}
